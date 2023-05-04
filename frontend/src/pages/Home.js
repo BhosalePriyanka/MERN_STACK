@@ -20,7 +20,7 @@ function Home(){
   const dispatch = useDispatch();
   const user = useSelector(state=>state.auth)
     const fetchProduct = async()=> {
-    const response = await fetch('http://localhost:4001/api/workout',{
+    const response = await fetch('https://app-mern-37k5.onrender.com/api/workout',{
      headers:{'Authorization':`Bearer ${user.token}`}
 
     });

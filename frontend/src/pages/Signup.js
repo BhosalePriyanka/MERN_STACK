@@ -21,7 +21,7 @@ function Signup() {
         setSignup({...signup,[e.target.name]:e.target.value})
     }
     const handelSubmit = async()=>{
-        const response = await fetch('http://localhost:4001/api/user/signup/',{
+        const response = await fetch('https://app-mern-37k5.onrender.com/api/user/signup/',{
             method:'POST',
             body:JSON.stringify(signup),
             headers:{

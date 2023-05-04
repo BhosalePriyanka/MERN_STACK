@@ -26,7 +26,7 @@ function Fetchworkout({workout}) {
     if(!user){
       return
     }
-    const response = await fetch('http://localhost:4000/api/workout/'+ workout._id,{
+    const response = await fetch('https://app-mern-37k5.onrender.com/api/workout/'+ workout._id,{
     method :'DELETE',
     headers:{
       'Authorization':`Bearer ${user.token}`

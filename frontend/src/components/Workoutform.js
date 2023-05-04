@@ -25,7 +25,7 @@ function Workoutform() {
         setError('You must be logged in')
         return
       }
-      const response = await fetch('http://localhost:4001/api/workout',{
+      const response = await fetch('https://app-mern-37k5.onrender.com/api/workout',{
         method:'POST',
         body:JSON.stringify(input),
         headers:{
