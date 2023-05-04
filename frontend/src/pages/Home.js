@@ -11,7 +11,7 @@ function Home(){
   //code using useState hook
  // const[workout,setWorkout]= useState()
   // const fetchWorkout = async() =>  {
-  //   const response = await fetch('http://localhost:4000/api/workout')
+  //   const response = await fetch('http://localhost:4001/api/workout')
   //   const jsondata =  await response.json()
   //   setWorkout(jsondata)
   //   }
