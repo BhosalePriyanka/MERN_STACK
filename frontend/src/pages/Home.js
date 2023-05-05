@@ -20,11 +20,12 @@ function Home(){
   const dispatch = useDispatch();
   const user = useSelector(state=>state.auth)
     const fetchProduct = async()=> {
-    const response = await fetch('https://app-mern-37k5.onrender.com/api/workout',{
+    const response = await fetch('api/workout',{
      headers:{'Authorization':`Bearer ${user.token}`}
 
     });
     const jsonData = await response.json();
+    console.log(jsonData)
     dispatch(setWorkout(jsonData));      
       
     }
@@ -36,8 +37,8 @@ function Home(){
       },[user]);
     
     const workout = useSelector(state=>state.allWorkout)
-console.log(user)
- 
+    console.log(workout)
+
   return (
     <>
     <Container className='text-center'>
@@ -51,10 +52,6 @@ console.log(user)
        workout = {workout}
        />
        )))} 
-
-      
-      
-      
     </Col>
 
     <Col>

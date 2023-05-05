@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
-import{useSelector} from 'react-redux'
+import{useSelector,useDispatch} from 'react-redux'
+import{createWorkout} from '../Redux/Action'
 function Workoutform() {
     const[input,setInput] = useState(
         {
@@ -13,6 +14,7 @@ function Workoutform() {
     const[error,setError]=useState('')
     const[emptyFields,setEmptyFields] = useState([])
     const user = useSelector(state=>state.auth)
+    const dispatch = useDispatch()
 
 
     const handleChange =(e)=>{
@@ -21,11 +23,12 @@ function Workoutform() {
     
 
     const handelSubmit = async(e)=>{
+     
       if(Object.keys(user).length === 0){
         setError('You must be logged in')
         return
       }
-      const response = await fetch('https://app-mern-37k5.onrender.com/api/workout',{
+      const response = await fetch('api/workout',{
         method:'POST',
         body:JSON.stringify(input),
         headers:{
@@ -34,18 +37,22 @@ function Workoutform() {
         }
       })
       const json = await response.json()
-  
+ 
       if(json.error){
         setError(json.error)
         setEmptyFields(json.emptyFields)
+        
       }
       if(!json.error){
         setError('')
         setEmptyFields([])
         alert("Record Added")
-        window.location.reload()
+        dispatch(createWorkout(json))
+        setInput({title:'',reps:'',load:'' })
+        // window.location.reload()
       }
-        
+      
+       
     }
     
     

@@ -21,7 +21,7 @@ function Login() {
 
     }
     const handelSubmit = async()=>{
-      const response = await fetch('https://app-mern-37k5.onrender.com/user/login/',{
+      const response = await fetch('api/user/login/',{
           method:'POST',
           body:JSON.stringify(loginDetails),
           headers:{
@@ -29,6 +29,7 @@ function Login() {
           }
       })
       const jsonData = await response.json()
+      console.log(jsonData)
      
       if(jsonData.error){
           setError(jsonData.error)

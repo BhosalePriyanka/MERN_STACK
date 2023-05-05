@@ -1,20 +1,26 @@
 export const setWorkout= (workouts) => {
-
     return {
             type : "SET_PRODUCTS",
-              payload : workouts
-    
-          }
-    
+              payload : workouts 
+          } 
     };
-    export const removeItem = (id) =>{
+
+
+export const removeItem = (id) =>{
       return{
         type: "REMOVEITEM",
         payload:id
       };
     };
+
+export const createWorkout = (workouts) =>{
+      return{
+        type: "CREATE",
+        payload:workouts
+      }
+    }
     
-    export const login = (user) =>{
+ export const login = (user) =>{
       return{
         type:"LOGIN",
         payload:user

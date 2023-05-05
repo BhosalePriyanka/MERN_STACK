@@ -26,7 +26,7 @@ function Fetchworkout({workout}) {
     if(!user){
       return
     }
-    const response = await fetch('https://app-mern-37k5.onrender.com/api/workout/'+ workout._id,{
+    const response = await fetch('api/workout/'+ workout._id,{
     method :'DELETE',
     headers:{
       'Authorization':`Bearer ${user.token}`
@@ -35,7 +35,7 @@ function Fetchworkout({workout}) {
   dispatch(removeItem(workout._id))
   }
   
-console.log(user)
+
   return (
     <>
 
