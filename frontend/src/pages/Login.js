@@ -21,7 +21,7 @@ function Login() {
 
     }
     const handelSubmit = async()=>{
-      const response = await fetch('api/user/login/',{
+      const response = await fetch('https://backend-mern-sdqt.onrender.com/api/user/login/',{
           method:'POST',
           body:JSON.stringify(loginDetails),
           headers:{

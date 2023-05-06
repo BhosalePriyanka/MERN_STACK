@@ -21,7 +21,7 @@ function Signup() {
         setSignup({...signup,[e.target.name]:e.target.value})
     }
     const handelSubmit = async()=>{
-        const response = await fetch('api/user/signup/',{
+        const response = await fetch('https://backend-mern-sdqt.onrender.com/api/user/signup/',{
             method:'POST',
             body:JSON.stringify(signup),
             headers:{

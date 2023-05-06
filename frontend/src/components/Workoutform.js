@@ -28,7 +28,7 @@ function Workoutform() {
         setError('You must be logged in')
         return
       }
-      const response = await fetch('api/workout',{
+      const response = await fetch('https://backend-mern-sdqt.onrender.com/api/workout',{
         method:'POST',
         body:JSON.stringify(input),
         headers:{

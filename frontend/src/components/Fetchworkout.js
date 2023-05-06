@@ -26,7 +26,7 @@ function Fetchworkout({workout}) {
     if(!user){
       return
     }
-    const response = await fetch('api/workout/'+ workout._id,{
+    const response = await fetch('https://backend-mern-sdqt.onrender.com/api/workout/'+ workout._id,{
     method :'DELETE',
     headers:{
       'Authorization':`Bearer ${user.token}`
